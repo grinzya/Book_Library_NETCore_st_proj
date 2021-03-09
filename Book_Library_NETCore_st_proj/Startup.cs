@@ -8,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Book_Library_NETCore_st_proj.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace Book_Library_NETCore_st_proj
 {
@@ -24,6 +26,8 @@ namespace Book_Library_NETCore_st_proj
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            string connection = Configuration.GetConnectionString("DefaultConnection");
+            services.AddDbContext<BookLibContext>(options => options.UseSqlServer(connection));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
