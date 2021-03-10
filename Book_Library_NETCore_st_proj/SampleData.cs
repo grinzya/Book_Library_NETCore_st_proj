@@ -7,6 +7,38 @@ namespace Book_Library_NETCore_st_proj
     {
         public static void Initialize(BookLibContext context)
         {
+            if(!context.Genres.Any())
+            {
+                context.Genres.AddRange(
+                    new Genres
+                    {
+                        GenreName = ""
+                    },
+                    new Genres
+                     {
+                         GenreName = "Мистика"
+                     }
+                    );
+                context.SaveChanges();
+            }
+
+            if(!context.Authors.Any())
+            {
+                context.Authors.AddRange(
+                    new Authors
+                    {
+                        Name = "Морис",
+                        LastName = "Леблан"
+                    },
+                    new Authors
+                    {
+                        Name = "Эдгар",
+                        LastName = "По"
+                    }
+                    );
+                context.SaveChanges();
+            }
+
             if(!context.Books.Any())
             {
                 context.Books.AddRange(
@@ -16,8 +48,16 @@ namespace Book_Library_NETCore_st_proj
                         BookName = "Приключения Арсена Люпена",
                         GenreID = 1,
                         StockRemains = 20
+                    },
+                    new Books
+                    {
+                        AuthorID = 2,
+                        BookName = "Маска красной смерти",
+                        GenreID = 2,
+                        StockRemains = 10
                     }
                     );
+                context.SaveChanges();
             }
         }
     }
