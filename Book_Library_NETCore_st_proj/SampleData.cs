@@ -12,7 +12,7 @@ namespace Book_Library_NETCore_st_proj
                 context.Genres.AddRange(
                     new Genres
                     {
-                        GenreName = ""
+                        GenreName = "Приключения"
                     },
                     new Genres
                      {

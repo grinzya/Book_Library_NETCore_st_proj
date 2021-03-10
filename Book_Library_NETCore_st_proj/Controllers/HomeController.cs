@@ -11,16 +11,22 @@ namespace Book_Library_NETCore_st_proj.Controllers
 {
     public class HomeController : Controller
     {
+        BookLibContext db;
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(BookLibContext context)
         {
-            _logger = logger;
+            db = context;
         }
+
+        //public HomeController(ILogger<HomeController> logger)
+        //{
+        //    _logger = logger;
+        //}
 
         public IActionResult Index()
         {
-            return View();
+            return View(db.Books.ToList());
         }
 
         public IActionResult Privacy()

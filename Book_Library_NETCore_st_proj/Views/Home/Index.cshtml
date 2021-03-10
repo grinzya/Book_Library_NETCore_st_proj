@@ -1,8 +1,40 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model IEnumerable<Book_Library_NETCore_st_proj.Models.Books>
+@{
+    ViewData["Title"] = "Список книг";
+
 }
 
-<div class="text-center">
+@*<div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+</div>*@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Список книг</title>
+</head>
+<body>
+    <h3>Книги</h3>
+    <table>
+        <tr>
+            <td>Название</td>
+            <td>Автор</td>
+            <td>Жанр</td>
+            <td>Осталось в наличии</td>
+            <td></td>
+        </tr>
+        @foreach (var book in Model)
+        {
+    <tr>
+        <td>@book.BookName</td>
+        <td>@book.Author</td>
+        <td>@book.Genre</td>
+        <td>@book.StockRemains</td>
+        <td><a href="~/Home/Rent/@book.ID">Выдача книги</a></td>
+    </tr>
+        }
+    </table>
+</body>
+</html>
