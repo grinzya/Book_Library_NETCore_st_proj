@@ -5,11 +5,17 @@ using System.Threading.Tasks;
 
 namespace Book_Library_NETCore_st_proj.Models
 {
-    public class BooksShared
+    public class Role
     {
         public int ID { get; set; }
-        public int ClientID { get; set; }
-        public int BooksID { get; set; }
 
+        public string Name { get; set; }
+
+        public List<User> Users { get; set; }
+
+        public Role()
+        {
+            Users = new List<User>();
+        }
     }
 }
