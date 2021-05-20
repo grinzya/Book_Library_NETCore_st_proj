@@ -34,13 +34,13 @@
                 @Html.DisplayFor(modelItem => item.BookName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Author.ID)
+                @item.Author.LastName  @item.Author.Name
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.StockRemains)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Genre.ID)
+                @Html.DisplayFor(modelItem => item.Genre.GenreName)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |

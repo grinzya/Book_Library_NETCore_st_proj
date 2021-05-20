@@ -4,14 +4,16 @@ using Book_Library_NETCore_st_proj.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Book_Library_NETCore_st_proj.Migrations
 {
     [DbContext(typeof(BookLibContext))]
-    partial class BookLibContextModelSnapshot : ModelSnapshot
+    [Migration("20210520114855_BooksShare")]
+    partial class BooksShare
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
