@@ -24,6 +24,11 @@ namespace Book_Library_NETCore_st_proj.Controllers
         //    _logger = logger;
         //}
 
+        public IActionResult AddAuthor()
+        {
+            return View();
+        }
+
         public IActionResult Index()
         {
             return View(db.Books.ToList());
